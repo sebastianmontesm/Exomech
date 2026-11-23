@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="draedon_skin"
+version="1.0.0"
+displayName="Draedon Skin"
+description='''Reemplaza el cuerpo del holograma de Draedon (Exo Mechs) por un modelo de jugador con skin propia.'''
+
+[[dependencies.draedon_skin]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.draedon_skin]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+
+# IMPORTANTE: mi mod se carga DESPUES de Exo Mechs para que mi renderer sustituya al suyo.
+# Comprueba que el modId sea exactamente "exo_mech" en META-INF/mods.toml del jar original.
+[[dependencies.draedon_skin]]
+modId="exo_mech"
+mandatory=true
+versionRange="[0,)"
+ordering="AFTER"
+side="CLIENT"
